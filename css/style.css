@@ -1,3 +1,104 @@
+@import url("https://fonts.googleapis.com/css?family=PT+Sans:400,700");
+@import url("https://fonts.googleapis.com/css?family=Open+Sans:600");
+@import url("https://fonts.googleapis.com/css?family=Ubuntu:700");
+@import url("https://fonts.googleapis.com/css?family=Pacifico");
+* {
+  box-sizing: border-box; }
 
+body {
+  font-size: 16px;
+  font-family: "PT Sans", Helvetica, Arial, sans-serif;
+  color: #787b80;
+  font-weight: normal;
+  line-height: 1.5rem;
+  margin: 0;
+  padding: 0; }
+
+a {
+  text-decoration: none;
+  color: inherit; }
+
+h1, h2, h3 {
+  margin: 0; }
+
+.wrapper {
+  width: 70%;
+  margin: 0 auto; }
+
+.btn {
+  border-radius: 25px;
+  font-size: 0.875rem;
+  font-family: "PT Sans", Helvetica, Arial, sans-serif;
+  color: #ffffff;
+  font-weight: normal;
+  border: none;
+  padding: 10px 15px;
+  background-color: #b5b7b9; }
+
+.btn-primary {
+  background-color: #50c3af; }
+
+.btn-big {
+  padding: 18px 50px;
+  text-transform: uppercase;
+  font-size: 0.9375rem;
+  font-weight: bold; }
+
+.main-header {
+  width: 100%;
+  min-height: 600px;
+  background: #40474e url("../img/header-bg.jpg") no-repeat;
+  background-size: cover;
+  text-align: center;
+  padding-top: 66px; }
+
+.logo-company {
+  font-size: 3.25rem;
+  font-family: "Pacifico", cursive;
+  color: #ffffff; }
+
+.main-nav {
+  margin-top: 45px; }
+  .main-nav a {
+    font-size: 0.8125rem;
+    font-family: "Open Sans", Helvetica, Arial, sans-serif;
+    color: #ffffff;
+    font-weight: 600;
+    line-height: 1.5rem;
+    text-transform: uppercase;
+    display: inline-block;
+    margin-right: 18px;
+    margin-left: 18px; }
+
+.header-title {
+  font-size: 3.325rem;
+  font-family: "Ubuntu", Helvetica, Arial, sans-serif;
+  color: #ffffff;
+  font-weight: 700;
+  line-height: 1.5rem;
+  text-transform: uppercase;
+  margin-top: 80px; }
+
+.header-subtitle {
+  font-size: 0.9375rem;
+  font-family: "PT Sans", Helvetica, Arial, sans-serif;
+  color: #ffffff;
+  font-weight: 700;
+  text-transform: uppercase;
+  margin-top: 40px;
+  margin-bottom: 80px;
+  position: relative; }
+  .header-subtitle:before, .header-subtitle:after {
+    content: "";
+    position: absolute;
+    left: 50%;
+    top: 50%;
+    background-color: #ffffff;
+    width: 100px;
+    height: 1px; }
+  .header-subtitle:before {
+    transform: translateX(-240px); }
+  .header-subtitle:after {
+    transform: translateX(140px); }
 
 /*# sourceMappingURL=style.css.map */

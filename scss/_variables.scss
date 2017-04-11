@@ -1,12 +1,25 @@
-//fonts stacks
+//color variables
+$accent-color: #50c3af;
+$white: #ffffff;
+$text-header-color: #40474e;
+$text-color: #787b80;
+$grey-bg-color: #eeeeef;
+$light-grey-bg-color: #f5f5f5;
+$btn-primary-color: #d2d5da;
+$btn-normal-color: #b5b7b9; 
+
+//paths variables
+$path-img: "../img";
+
+//typography and fonts stacks
 @import url('https://fonts.googleapis.com/css?family=PT+Sans:400,700');
-font-family: 'PT Sans', sans-serif;
-
 @import url('https://fonts.googleapis.com/css?family=Open+Sans:600');
-font-family: 'Open Sans', sans-serif;
-
 @import url('https://fonts.googleapis.com/css?family=Ubuntu:700');
-font-family: 'Ubuntu', sans-serif;
-
 @import url('https://fonts.googleapis.com/css?family=Pacifico');
-font-family: 'Pacifico', cursive;
+
+$stack-sans-serif: Helvetica, Arial, sans-serif;
+$stack-pacifico: 'Pacifico', cursive;
+$stack-ptsans: 'PT Sans', $stack-sans-serif;
+$stack-open-sans: 'Open Sans', $stack-sans-serif;
+$stack-ubuntu: 'Ubuntu', $stack-sans-serif;
+
