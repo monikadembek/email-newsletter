@@ -1,6 +1,6 @@
-@import '_variables.scss';
-@import '_extends.scss';
-@import '_mixins.scss';
+@import 'variables.scss';
+@import 'extends.scss';
+@import 'mixins.scss';
 
 
 //----------- base styles --------------------------
@@ -24,11 +24,22 @@ h1, h2, h3 {
   margin: 0;
 }
 
+section {
+  &:nth-child(odd) {
+    background-color: $grey-bg-color;
+  }
+  &:nth-child(even) {
+    background-color: $light-grey-bg-color;
+  }
+}
+
+
 // --------------- container styles -------------------
 .wrapper {
-  width: 70%;
+  width: 60%;
   margin: 0 auto;
 }
+
 
 //--------------- components styles -------------------
 
@@ -106,6 +117,28 @@ h1, h2, h3 {
     transform: translateX(140px);
   }
 }
+
+//section styles
+.flex-container {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+}
+
+.top-section {
+  @include section-padding(50px, 50px);
+  .section-col {
+    text-align: center;
+    width: 33%;
+  }
+  img {
+    height: 35px;
+  }
+  .title {
+    @include header-title(1rem);
+  }
+}
+
 
 
 

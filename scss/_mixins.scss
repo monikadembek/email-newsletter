@@ -5,3 +5,13 @@
 	font-weight: $weight;
 	line-height: $l-height;
 }
+
+@mixin section-padding($top-padding, $bottom-padding) {
+  padding-top: $top-padding;
+  padding-bottom: $bottom-padding;
+}
+
+@mixin header-title($font-size) {
+  @include text($font-size, $stack-ptsans, $text-header-color, bold);
+  text-transform: uppercase;
+}
