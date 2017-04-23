@@ -15,3 +15,35 @@
   @include text($font-size, $stack-ptsans, $text-header-color, bold);
   text-transform: uppercase;
 }
+
+
+//extends
+.underline {
+  position: relative;
+  &:after {
+    content: "";
+    display: block;
+    position: absolute;
+    bottom: -5px;
+    left: 0;
+    width: 0;
+    height: 2px;
+    background-color: $white;
+    transition: width 0.3s;
+  }
+  &:hover:after{
+    width: 100%;
+  }
+}
+
+@mixin title-icon($icon-path) {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 25px;
+  height: 25px;
+  background: url('#{$path-img}/#{$icon-path}') no-repeat;
+  background-size: 25px 25px;
+  background-position: 0% 0%;
+}

@@ -18,6 +18,10 @@ body {
 a {
 	text-decoration: none;
 	color: inherit; 
+  transition: all 0.3s;
+  &:hover {
+    color: $accent-color;
+  }
 }
 
 h1, h2, h3 {
@@ -45,11 +49,23 @@ section {
   }
 }
 
+article {
+  margin: 0 auto;
+  @media #{$brk-sm} {
+    margin-bottom: 80px;
+  }
+}
 
 // --------------- container styles -------------------
 .wrapper {
-  width: 60%;
   margin: 0 auto;
+  width: 60%;
+  @media #{$brk-md} {
+    width: 90%;
+  }
+  @media #{$brk-sm} {
+    width: 95%;
+  }
 }
 
 .flex-container {
@@ -57,8 +73,15 @@ section {
   flex-direction: row;
   justify-content: space-between;
   flex: 1;
+  @media #{$brk-sm} {
+    flex-direction: column;
+  }
 }
-
+/*
+.section-col {
+  
+}
+*/
 //--------------- components styles -------------------
 
 .btn {
@@ -68,10 +91,18 @@ section {
   padding: 10px 15px; 
   background-color: $btn-normal-color;
   cursor: pointer;
+  transition: all .3s;
+  &:hover {
+    background-color: $btn-normal-color-darken;
+  }
 }
 
 .btn-primary {
   background-color: $accent-color;
+  transition: all .3s;
+  &:hover {
+    background-color: $accent-color-darken;
+  }
 }
 
 .btn-big {
@@ -80,7 +111,7 @@ section {
   @include text(0.9375rem, $weight: bold);
 }
 
-.title-underline {
+.title-underline { //@used for extend
   content: "";
   position: absolute;
   top: 40px;
@@ -96,6 +127,10 @@ section {
 
 .read-more-link {
   color: $accent-color;
+  transition: all .3s;
+  &:hover {
+    color: $accent-color-darken;
+  }
 }
 
 //--------------- typography styles -------------
@@ -126,6 +161,7 @@ section {
     display: inline-block;
     margin-right: 18px;
     margin-left: 18px;
+    @extend .underline;
   }
 }
 
@@ -133,6 +169,9 @@ section {
   @include text(3.325rem, $stack-ubuntu, $white, 700, 1.5rem);
   text-transform: uppercase;
   margin-top: 80px;
+  @media #{$brk-xs} {
+    @include text(2rem);
+  }
 }
 
 .header-subtitle {
@@ -158,18 +197,42 @@ section {
   &:after {
     transform: translateX(140px);
   }
+  @media #{$brk-sm} {
+    &:before,
+    &:after {
+      width: 50px;
+    }
+    &:before {
+      transform: translateX(-190px);
+    }
+  }
+  @media #{$brk-xs} {
+    &:before,
+    &:after {
+      width: 30px;
+    }
+    &:before {
+      transform: translateX(-150px);
+    }
+    &:after {
+      transform: translateX(120px);
+    }
+  }
 }
 
 //------------- section styles --------------------------
 .top-section {
   @include section-padding(50px, 50px);
   .section-col {
-    // border: 1px red solid;
     text-align: center;
     margin-right: 50px;
     &:last-child {
       margin-right: 0;
     }
+    @media #{$brk-sm} {
+      margin-right: 0;
+      margin-bottom: 80px; 
+    } 
   }
   img {
     height: 35px;
@@ -186,7 +249,11 @@ section {
   article {
     &:first-child {
       margin-right: 60px;
+      @media #{$brk-sm} {
+        margin-right: 0;
+      }
     }
+
     img {
       max-width: 100%;
       height: auto;
@@ -214,15 +281,9 @@ section {
       @extend .title-underline;
       width: 40%;
     }
-    //@extend .title-icon;
     padding-left: 40px;
     &:before {
-      content: "";
-      top: 0;
-      left: 0;
-      width: 20px;
-      height: 20px;
-      background-image: url('#{$path-img}/life-preserver.svg') no-repeat;
+      @include title-icon('life-preserver.svg');
     }
   }
   p {
@@ -259,10 +320,22 @@ section {
   .title {
     position: relative;
     margin-bottom: 48px;
+    padding-left: 40px;
     &:after {
       @extend .title-underline;  
     }
+    &.title-icon-plane {
+      &:before {
+        @include title-icon('paper-plane.svg')
+      }
+    }
+    &.title-icon-pencil {
+      &:before {
+        @include title-icon('pencil.svg')
+      }
+    }   
   }
+  
   p {
     margin-bottom: 35px;
   }
@@ -272,13 +345,19 @@ section {
   @include section-padding(60px, 60px);
   .flex-container {
     flex-direction: row;
+    @media #{$brk-sm} {
+      flex-direction: column;
+    }
   }
   .col {
     width: 48%;
     margin-right: 2%;
     &:last-child {
-      width: 48%;
       margin-left: 2%;
+    }
+    @media #{$brk-sm} {
+      width: 100%;
+      margin-bottom: 40px;
     }
   }
   .title {
